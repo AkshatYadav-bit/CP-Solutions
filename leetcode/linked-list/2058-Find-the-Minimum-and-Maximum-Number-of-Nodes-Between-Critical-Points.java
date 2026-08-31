@@ -25,7 +25,7 @@ class Solution {
             temp = temp.next;
             count++;
         }
-        System.out.println(lst);
+        //System.out.println(lst);
         Collections.sort(lst);
         if(lst.size() < 2) return new int[]{-1,-1};
         int max = lst.getLast() - lst.get(0);
