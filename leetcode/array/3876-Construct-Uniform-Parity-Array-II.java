@@ -9,6 +9,10 @@ class Solution {
                 minOdd = Math.min(minOdd,x);
             }
         }
+        // we can convert all evens to odds if minEven - minOdd >=1
+        // or we have all evens already i.e.  minOdd == Integer.MAX_VALUE
+        // we can't convert all odds to evens thats why it is false for such case
+        // to make all evens, we can't do that unless all numbers are even already
         if(minEven - minOdd >=1 || minOdd == Integer.MAX_VALUE) {
             return true;
         }
