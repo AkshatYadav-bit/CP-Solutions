@@ -8,8 +8,10 @@ class Solution {
 
         long count = 0;
         long c = (long)Math.floor(Math.log10(n) / 3.0);
+        
+        // we can have c = 5 for very large number thats why below condition to ensure correct c
         if(n <= (long)Math.pow(10,15)-1 && c == 5) c = 4;
-        // System.out.println(c);
+        
         count += (c != 0)?(long)(n - Math.pow(10,3*c) + 1)*c  : 0;
         while(c > 1){
             count += (long)((long)Math.pow(10,3*c) - (long)Math.pow(10,3*(c-1)))*(c-1);
