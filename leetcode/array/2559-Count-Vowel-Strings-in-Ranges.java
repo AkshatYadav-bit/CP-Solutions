@@ -12,7 +12,7 @@ class Solution {
             int s = queries[i][0];
             int e = queries[i][1];
             if( s == 0) ans[i] = arr[e];
-            else ans[i] = ( arr[s] == arr[s-1])? arr[e]-arr[s]:arr[e]-arr[s-1];
+            else ans[i] = arr[e]-arr[s-1];
         }
         return ans;
     }
