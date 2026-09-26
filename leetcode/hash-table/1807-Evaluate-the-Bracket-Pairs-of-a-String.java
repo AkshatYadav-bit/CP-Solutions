@@ -11,13 +11,13 @@ class Solution {
             if( s.charAt(i) == '('){
                 // System.out.println("#");
                 i++;
-                String key = "";
+                StringBuilder key = new StringBuilder();
                 while(i < n && s.charAt(i) != ')'){
                     // System.out.println("o");
-                    key += s.charAt(i);
+                    key.append(s.charAt(i));
                     i++;
                 }
-                if(map.containsKey(key)) sb.append(map.get(key));
+                if(map.containsKey(key.toString())) sb.append(map.get(key.toString()));
                 else sb.append("?");
                 continue;
             }
