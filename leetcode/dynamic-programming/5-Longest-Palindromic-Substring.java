@@ -5,6 +5,7 @@ class Solution {
         t[0][0] = true;
         String ans = "";
         int max = 0;
+        int start = 0; int end = 0;
 
         // i = start_index and j = end_index
         for(int j = 0; j < n ; j++){
@@ -14,11 +15,11 @@ class Solution {
                 else t[i][j] = (s.charAt(i) == s.charAt(j) ) && ( t[i+1][j-1] );
 
                 if(t[i][j] == true && max < j - i + 1){
-                    ans = s.substring(i,j+1);
+                    start = i ; end = j+1;
                     max = j -i +1;
                 }
             }
         }
-        return ans;
+        return s.substring(start,end);
     }
 }
