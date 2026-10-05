@@ -10,9 +10,7 @@ class Solution {
         int n = arr.length;
         int[][] t = new int[n+1][W+1];
 
-        for(int i = 0 ; i <= n ; i++){
-            t[i][0] = 1; // number of different expressions to build sum = 0
-        }
+        t[0][0] = 1;
         for(int i = 1 ; i <= n ; i++){
             for(int w = 0 ; w <= W ; w++){
                 if(arr[i-1] > w){
