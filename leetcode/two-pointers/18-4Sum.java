@@ -8,7 +8,7 @@ class Solution {
             long t = (long)target - arr[i];
             List<List<Integer>> lst = twoSum(arr,i,t);
             final_ans.addAll(lst);
-            System.out.println(final_ans);
+            // System.out.println(final_ans);
         }
         return final_ans;
     }
