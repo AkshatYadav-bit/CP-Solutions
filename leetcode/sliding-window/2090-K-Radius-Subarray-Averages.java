@@ -25,7 +25,7 @@ class Solution {
         for(int i = n - k ; i < n ;i++){
             lst.add(-1);
         }
-        System.out.println(lst);
+       // System.out.println(lst);
         int[] ans = new int[n];
         for(int i = 0 ; i < n ; i++){
             ans[i] = lst.get(i);
