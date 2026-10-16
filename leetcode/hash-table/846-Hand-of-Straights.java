@@ -21,11 +21,8 @@ class Solution {
                     if(map.get(min+j) > 1) {
                         map.put(min+j,map.get(min+j)-1);
                         k = Math.min(min+j,k);
-                    }
-                    else map.remove( min+j);
-                }else{
-                    return false;
-                }
+                    }else map.remove( min+j);
+                }else return false;
                 p++;
             }
             // System.out.println(map);
