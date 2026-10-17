@@ -1,11 +1,16 @@
 class Solution {
     public int minSwaps(int[] nums) {
         List<Integer> lst = new ArrayList<>();
-        for(int x : nums) lst.add(x);
+        Map<Integer,Integer> map_sum = new HashMap<>();
+        for(int x : nums){
+            lst.add(x);
+            map_sum.put(x,digsum(x));
+        }
+        
 
         Collections.sort(lst, (a,b) ->{
-            int a_s = digsum(a);
-            int b_s = digsum(b);
+            int a_s = map_sum.get(a);
+            int b_s = map_sum.get(b);
             if(a_s != b_s){
                 return Integer.compare(a_s,b_s);
             }else{
