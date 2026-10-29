@@ -56,7 +56,7 @@ class Trie {
 
             if(current.isEnd == true) return ans.toString(); // ans before this point is completely valid prefix
             if(current.children[i] == null){
-                // it means this is it
+                // it means this is it, this is the end, basically  nothing matched 
                 return "";
             }
             ans.append(ch);
