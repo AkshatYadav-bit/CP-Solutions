@@ -23,6 +23,10 @@ class Solution {
         if((left == p && right == q) || ( left == q && right == p)){
             return root; // this root is LCS
         }
+        //or
+        // if (left != null && right != null) {
+        //     return root;
+        // }
 
         // here if either left or right is equal to null
 
