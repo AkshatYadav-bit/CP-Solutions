@@ -16,10 +16,19 @@
 class Solution {
    // int max = Integer.MIN_VALUE;
     public int maxDepth(TreeNode root) {
-        return solve(root);
-    }
-    public int solve(TreeNode root){
         if(root == null) return 0;
-        return 1 + Math.max(solve(root.left),solve(root.right));
+        Deque<TreeNode> q = new ArrayDeque<>();
+        q.addLast(root);
+        int ans = 0;
+        while(!q.isEmpty()){
+            int size = q.size();
+            for(int i = 0 ; i < size ; i++){
+                TreeNode rem = q.removeFirst();
+                if(rem.left != null) q.addLast(rem.left);
+                if(rem.right != null) q.addLast(rem.right);
+            }
+            ans++;
+        }
+        return ans;
     }
 }
