@@ -59,7 +59,6 @@ class Trie {
                 return "";
             }
             ans.append(ch);
-            System.out.println(ans);
             if(current.children[i].isEnd == true) return ans.toString();
 
             current = current.children[i];
