@@ -2,23 +2,15 @@ class Solution {
     public String replaceWords(List<String> dictionary, String sentence) {
        
         String[] srr = sentence.split(" ");
-        List<Trie> lst = new ArrayList<>();
-        for(String s : srr){
-            Trie tr = new Trie();
-            tr.insert(s);
-            lst.add(tr);
+        Trie t = new Trie();
+        for(String s : dictionary){
+           t.insert(s);
         }
         
-        for(String pre : dictionary){
-            for(int i = 0; i < lst.size(); i++){
-                if(lst.get(i).startsWith(pre) == true){
-                    srr[i] = pre;
-
-                    // updating in lst too
-                    Trie tr = new Trie();
-                    tr.insert(pre);
-                    lst.set(i,tr);
-                }
+        for(int i = 0; i < srr.length; i++){
+            String pre = t.shortestPrefix(srr[i]);
+            if(pre.length() != 0){
+                srr[i] = pre;
             }
         }
 
@@ -56,24 +48,43 @@ class Trie {
         current.isEnd = true; // word ends here
     }
     
-    public boolean search(String word) {
+    public String shortestPrefix(String word){
+        StringBuilder ans = new StringBuilder();
         TrieNode current = root;
         for(char ch : word.toCharArray()){
-            int i = ch-'a';
-            if(current.children[i] == null) return false;
+            int i = ch - 'a';
+
+            if(current.children[i] == null){
+                // it means this is it
+                return "";
+            }
+            ans.append(ch);
+            System.out.println(ans);
+            if(current.children[i].isEnd == true) return ans.toString();
+
             current = current.children[i];
         }
-        return current.isEnd == true;
-        
+        return "";
     }
     
-    public boolean startsWith(String prefix) {
-        TrieNode current = root;
-        for(char ch : prefix.toCharArray()){
-            int i = ch-'a';
-            if(current.children[i] == null) return false;
-            current = current.children[i];
-        }
-        return true;
-    }
+    // public boolean search(String word) {
+    //     TrieNode current = root;
+    //     for(char ch : word.toCharArray()){
+    //         int i = ch-'a';
+    //         if(current.children[i] == null) return false;
+    //         current = current.children[i];
+    //     }
+    //     return current.isEnd == true;
+        
+    // }
+    
+    // public boolean startsWith(String prefix) {
+    //     TrieNode current = root;
+    //     for(char ch : prefix.toCharArray()){
+    //         int i = ch-'a';
+    //         if(current.children[i] == null) return false;
+    //         current = current.children[i];
+    //     }
+    //     return true;
+    // }
 }
