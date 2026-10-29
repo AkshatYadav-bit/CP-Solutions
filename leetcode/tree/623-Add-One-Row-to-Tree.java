@@ -26,18 +26,12 @@ class Solution {
         int ind = 1;
 
         while(!q.isEmpty()){
-            List<TreeNode> lst = new ArrayList<>();
+    
             int size = q.size();
             for(int i = 0 ; i < size ; i++){
                 
                 TreeNode rem = q.removeFirst();
-                if(ind == depth-1) lst.add(rem);
-              
-                if(rem.left != null) q.addLast(rem.left);
-                if(rem.right != null) q.addLast(rem.right);
-            }
-            if(ind == depth-1){
-                for(TreeNode rem : lst){
+                if(ind == depth-1){
                     TreeNode leftnode = rem.left;
                     TreeNode rightnode = rem.right;
                     
@@ -47,9 +41,14 @@ class Solution {
                     rem.left.left = leftnode;
                     rem.right.right = rightnode;
                 }
+              
+                if(rem.left != null) q.addLast(rem.left);
+                if(rem.right != null) q.addLast(rem.right);
+            }
+            if(ind == depth-1){
                 return root;
             }
-           
+
             ind++;
         }
         return root;
