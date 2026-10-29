@@ -18,7 +18,7 @@ class Solution {
         if(root == null) return -1;
         Deque<TreeNode> q = new ArrayDeque<>();
         q.addLast(root);
-        int ind = 1;
+
         int ans = root.val;
         while(!q.isEmpty()){
             int leftmost = 0;
@@ -35,7 +35,6 @@ class Solution {
                 if(rem.right != null) q.addLast(rem.right);
             }
             ans = leftmost;
-            ind++;
         }
         return ans;
     }
