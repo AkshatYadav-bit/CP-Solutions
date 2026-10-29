@@ -54,13 +54,12 @@ class Trie {
         for(char ch : word.toCharArray()){
             int i = ch - 'a';
 
+            if(current.isEnd == true) return ans.toString(); // ans before this point is completely valid prefix
             if(current.children[i] == null){
                 // it means this is it
                 return "";
             }
             ans.append(ch);
-            if(current.children[i].isEnd == true) return ans.toString();
-
             current = current.children[i];
         }
         return "";
