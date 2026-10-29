@@ -31,15 +31,9 @@ class Solution {
             return;
         }
         if(root.left != null){
-            num = num*10 + root.left.val;
-            helper(root.left,num); // root.left with current num including the root.left.val
-            num = num/10;
+            helper(root.left,num*10 + root.left.val); // root.left with current num including the root.left.val
         }
 
-        if(root.right != null){
-            num = num*10 + root.right.val;
-            helper(root.right,num); 
-            num = num/10;
-        }
+        if(root.right != null) helper(root.right,num*10 + root.right.val); 
     }
 }
