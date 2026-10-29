@@ -31,5 +31,8 @@ class Solution {
         max = Math.max(s2+root.val,max);
         max = Math.max(s1+s2+root.val,max);
         return root.val + Math.max(Math.max(s1,s2),0);
+        //• If both s1 and s2 are negative numbers (e.g., -5 and -10), Math.max(s1, s2) will pick -5.
+        // • You will then return root.val + (-5), which actively reduces the maximum path sum available to the parent node.
+        // • Since a path can choose not to extend into a child subtree, any negative sum contribution should be clamped to 0
     }
 }
