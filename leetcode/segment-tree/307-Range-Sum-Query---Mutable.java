@@ -12,7 +12,7 @@ class NumArray {
             pre[i] = pre[i-1]+nums[i-1];
             arr[i-1] = nums[i-1];
         }
-       System.out.println(Arrays.toString(pre));
+       //System.out.println(Arrays.toString(pre));
 
         for(int i = 1; i <= n ; i++){
             int block_size = (i & -i);
@@ -20,7 +20,7 @@ class NumArray {
             int right = i+1-block_size;
             blocks[i] = pre[left] - pre[right-1];
         }
-       System.out.println(Arrays.toString(blocks));
+       //System.out.println(Arrays.toString(blocks));
     }
     
     public void update(int index, int val) {
