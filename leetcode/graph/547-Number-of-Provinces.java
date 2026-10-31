@@ -6,9 +6,10 @@ class Solution {
         for(int x = 0 ; x < n ; x++){
             if( vis[x] == 0){
                 ans++;
-                bfs(x,vis, isConnected); // O(k*k) where k is all nodes from starting node = x
+                bfs(x,vis, isConnected); // O(V*V) where V is total no. of nodes
             }
         }
+        // O(V^3) is TC
         return ans;
     }
 
