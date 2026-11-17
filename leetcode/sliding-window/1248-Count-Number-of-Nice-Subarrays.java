@@ -5,7 +5,7 @@ class Solution {
         for(int i = 0 ; i < n ; i++){
             if( nums[i] % 2 != 0) lst.add(i);
         }
-        System.out.println(lst);
+     //   System.out.println(lst);
 
         if( k > lst.size()) return 0;
         int ans = 0;
