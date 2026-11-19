@@ -2,7 +2,7 @@ class Solution {
     public int minimizeSum(int[] nums) {
         int n = nums.length;
         Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
+        //System.out.println(Arrays.toString(nums));
         int ans = 0;
         if(nums.length == 3){
             return 0;
