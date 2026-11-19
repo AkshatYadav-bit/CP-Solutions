@@ -4,7 +4,7 @@ class Solution {
         // we will be using bfs to detect if the region/graph touches touches boundary or not
         int n = board.length;
         int m = board[0].length;
-        for(int i = 0 ; i < n ; i++) System.out.println(Arrays.toString(board[i]));
+        // for(int i = 0 ; i < n ; i++) System.out.println(Arrays.toString(board[i]));
         boolean[][]  vis = new boolean[n][m];
         for(int i = 0 ; i < n ; i++){
             for(int j = 0 ; j < m ; j++){
