@@ -11,7 +11,6 @@ class Solution {
             for(int j = 0 ; j < m  ; j++){
                 if(mat[i][j] == 0 && vis[i][j] == 0){
                     vis[i][j] = 1;
-                    // System.out.println(" i -> "+i+" and j -> "+j);
                     q.addLast(new int[]{i,j});
                 }
 
@@ -22,14 +21,11 @@ class Solution {
         int level = 1;
         while(!q.isEmpty()){
            int size = q.size();
-        //     for(int[] arr : q){
-        //     System.out.println("#"+Arrays.toString(arr));
-        //    }
            for(int k = 0 ; k < size ; k++){
                 int r = q.getFirst()[0];
                 int c = q.getFirst()[1];
                 q.removeFirst();
-                // System.out.println("r - > "+r+" and c -> "+c);
+            
                 for(int i = 0 ; i < 4 ; i++){
                     int nrow = r + delrow[i];
                     int ncol = c + delcol[i];
@@ -38,16 +34,10 @@ class Solution {
                         && mat[nrow][ncol] == 1 && vis[nrow][ncol] == 0){
                             vis[nrow][ncol] = 1;
                             dist[nrow][ncol] = level;
-                            // System.out.println("nrow->"+nrow+" and ncol ->"+ncol);
-                          
                             q.addLast(new int[]{nrow,ncol});
                     }
                 }
            }
-        //    for(int[] arr : q){
-        //     System.out.println(Arrays.toString(arr));
-        //    }
-        //    System.out.println(" level - > "+level);
            level++;
         }
         return dist;
