@@ -19,7 +19,6 @@ class Solution {
             int node = q.getLast()[0];
             int clr = q.getLast()[1];
             int[] rem = q.removeLast();
-            //System.out.println(Arrays.toString(rem));
             for(int x : graph[node]){
                 int toColor = (clr == 1)?0:1;
                 if(color[x] == -1){
@@ -29,7 +28,6 @@ class Solution {
                     return false; // not a bipartite graph
                 }
             }
-            //for(int[] arr : q) System.out.println(Arrays.toString(arr));
         }
         return true;
     }
