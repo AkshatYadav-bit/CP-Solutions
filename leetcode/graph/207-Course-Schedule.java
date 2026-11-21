@@ -10,8 +10,8 @@ class Solution {
         for(int i = 0 ; i < numCourses ; i++) adj.add(new ArrayList<>());
 
         for(int[] a : prerequisites){
-            adj.get(a[0]).add(a[1]);
-            indegree[a[1]]++;
+            adj.get(a[1]).add(a[0]);
+            indegree[a[0]]++;
         }
         for(int i = 0 ; i < numCourses ; i++) if(indegree[i] == 0) q.addFirst(i);
 
