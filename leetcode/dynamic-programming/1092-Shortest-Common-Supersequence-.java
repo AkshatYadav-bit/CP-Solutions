@@ -27,10 +27,8 @@ class Solution {
                 int b = t[i-1][j];
                 if(a > b){
                     ans.append(str2.charAt(j-1));
-                   
                     j--;
                 }else{
-                    // ans.append(str2.charAt(j-1));
                      ans.append(str1.charAt(i-1));
                     i--;
                 }
